@@ -52,9 +52,9 @@ console.log(
  * Use Cases
  */
 
-const registerUser = new RegisterUser(userRepository);
+const registerUser = new RegisterUser(userRepository, passwordHasher);
 
-const loginUser = new LoginUser(userRepository);
+const loginUser = new LoginUser(userRepository, passwordHasher);
 
 const createClass =new CreateClass(classRepository);
 
@@ -90,7 +90,8 @@ const loginPresenter = new LoginPresenter(
         app,
         loginUser,
         registerUser,
-        classPresenter
+        classPresenter,
+        passwordHasher
     );
 
 /**
