@@ -9,9 +9,9 @@
 
 export class LoginUser {
 
-    constructor(userRepository) {
+    constructor(userRepository, passwordHasher,) {
         this.userRepository = userRepository;
-        //this.passwordHasher = passwordHasher;
+        this.passwordHasher = passwordHasher;
     }
 
     async execute(credentials) {
